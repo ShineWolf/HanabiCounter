@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>測試</title>
+<style>
+	table.center {
+	width: 180px;
+		text-align:center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.leftdiv {
+		width: 800px;
+		border: 5px; 
+		float:left;
+	}
+	.rightdiv {
+		border: 5px;
+		float:left;
+	}
+	.middle{
+		float:left;
+	}
+	textarea {
+		resize: none;
+	}
+</style>
+</head>
+
+<body>
+<div class="leftdiv">
+	<fieldset>
+		<legend>手牌區</legend>
+		<table class="center">
+			<tr><td>
+					<canvas id="SelfCardZoneCanvas1" width="80" height="100"></canvas>
+				</td>
+				<td>
+					<canvas id="SelfCardZoneCanvas2" width="80" height="100"></canvas>
+				</td>
+				<td>
+					<canvas id="SelfCardZoneCanvas3" width="80" height="100"></canvas>
+				</td>
+				<td>
+					<canvas id="SelfCardZoneCanvas4" width="80" height="100"></canvas>
+				</td></tr>
+			<tr><td>
+					<button id="Player0C1">出牌</button>
+					<button id="Player0D1">棄牌</button>
+				</td>
+				<td>
+					<button id="Player0C2">出牌</button>
+					<button id="Player0D2">棄牌</button>
+				</td>
+				<td>
+					<button id="Player0C3">出牌</button>
+					<button id="Player0D3">棄牌</button>
+				</td>
+				<td>
+					<button id="Player0C4">出牌</button>
+					<button id="Player0D4">棄牌</button>
+				</td></tr>
+			<tr><td>
+				<table border="1" class="center">
+					<tr><td>紅</td><td>黃</td><td>綠</td><td>藍</td><td>白</td><td>彩</td></tr>
+					<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+				</table>
+				</td>
+				<td>
+				<table border="1" class="center">
+					<tr><td>紅</td><td>黃</td><td>綠</td><td>藍</td><td>白</td><td>彩</td></tr>
+					<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+				</table>
+				</td>
+				<td>
+				<table border="1" class="center">
+					<tr><td>紅</td><td>黃</td><td>綠</td><td>藍</td><td>白</td><td>彩</td></tr>
+					<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+				</table>
+				</td>
+				<td>
+				<table border="1" class="center">
+					<tr><td>紅</td><td>黃</td><td>綠</td><td>藍</td><td>白</td><td>彩</td></tr>
+					<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+				</table>
+				</td></tr>
+		</table>
+	
+	</fieldset>
+	<fieldset>
+		<legend>其他玩家手牌區</legend>
+		<table border="1">
+			<tr><td>玩家一</td>
+			<td>玩家二</td>
+			<td>玩家三</td>
+			<td>玩家四</td></tr>
+			<tr><td>
+					<canvas id="Player1ZoneCanvas" width="180" height="100"></canvas>
+				</td>
+				<td>
+					<canvas id="Player2ZoneCanvas" width="180" height="100"></canvas>
+				</td>
+				<td>
+					<canvas id="Player3ZoneCanvas" width="180" height="100"></canvas>
+				</td>
+				<td>
+					<canvas id="Player4ZoneCanvas" width="180" height="100"></canvas>
+				</td></tr>
+			<tr><td>
+					<button id="Player1C1">出牌</button>
+					<button id="Player1D1">棄牌</button>
+					<button id="Player1C2">出牌</button>
+					<button id="Player1D2">棄牌</button></td>
+				<td>
+					<button id="Player2C1">出牌</button>
+					<button id="Player2D1">棄牌</button>
+					<button id="Player2C2">出牌</button>
+					<button id="Player2D2">棄牌</button></td>
+				<td>
+					<button id="Player3C1">出牌</button>
+					<button id="Player3D1">棄牌</button>
+					<button id="Player3C2">出牌</button>
+					<button id="Player3D2">棄牌</button></td>
+				<td>
+					<button id="Player4C1">出牌</button>
+					<button id="Player4D1">棄牌</button>
+					<button id="Player4C2">出牌</button>
+					<button id="Player4D2">棄牌</button></td>
+			</tr>
+			<tr><td>
+					<button id="Player1C3">出牌</button>
+					<button id="Player1D3">棄牌</button>
+					<button id="Player1C4">出牌</button>
+					<button id="Player1D4">棄牌</button></td>
+				<td>            
+					<button id="Player2C3">出牌</button>
+					<button id="Player2D3">棄牌</button>
+					<button id="Player2C4">出牌</button>
+					<button id="Player2D4">棄牌</button></td>
+				<td>            
+					<button id="Player3C3">出牌</button>
+					<button id="Player3D3">棄牌</button>
+					<button id="Player3C4">出牌</button>
+					<button id="Player3D4">棄牌</button></td>
+				<td>            
+					<button id="Player4C3">出牌</button>
+					<button id="Player4D3">棄牌</button>
+					<button id="Player4C4">出牌</button>
+					<button id="Player4D4">棄牌</button></td>
+			</tr>
+		</table>
+	</fieldset>
+	<div class="middle">
+		<fieldset>
+			<legend>場上</legend>
+			<table border = "1">
+				<tr><td>
+					<canvas id="RedZoneCanvas" width="80" height="100"></canvas>
+					</td>
+					<td>
+					<canvas id="YellowZoneCanvas" width="80" height="100"></canvas>
+					</td>
+					<td>
+					<canvas id="GreenZoneCanvas" width="80" height="100"></canvas>
+					</td></tr>
+				<tr><td>
+					<canvas id="BlueZoneCanvas" width="80" height="100"></canvas>
+					</td>
+					<td>
+					<canvas id="WhiteZoneCanvas" width="80" height="100"></canvas>
+					</td>
+					<td>
+					<canvas id="RainbowZoneCanvas" width="80" height="100"></canvas>
+					</td></tr>
+			</table>
+			
+		</fieldset>
+	</div>
+	<div class="middle">
+		<fieldset>
+			<legend>棄牌區</legend>
+			<canvas id="DiscardCardZoneCanvas" width="260" height="220"></canvas><br />
+		</fieldset>
+	</div>
+	<div class="middle">
+		<fieldset>
+			<legend>剩餘牌數</legend>
+			<table border="1">
+				<tr>
+				<td>No.</td>
+				<td>紅</td>
+				<td>黃</td>
+				<td>藍</td>
+				<td>綠</td>
+				<td>白</td>
+				<td>彩</td></tr>
+				<tr>
+				<td>1</td>
+				<td>2</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td></tr>
+				<tr>
+				<td>2</td>
+				<td></td>
+				<td>1</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td></tr>
+				<tr>
+				<td>3</td>
+				<td></td>
+				<td></td>
+				<td>1</td>
+				<td></td>
+				<td></td>
+				<td></td></tr>
+				<tr>
+				<td>4</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>0</td>
+				<td></td>
+				<td></td></tr>
+				<tr>
+				<td>5</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>0</td></tr>
+			</table>
+		</fieldset>
+	
+	</div>
+</div>
+<div class="rightdiv">
+	<fieldset>
+		<legend>操作區</legend>
+		<button id="Initial">Initial</button>
+		<fieldset>
+			<legend>玩家</legend>
+			<input checked="checked" name="Player" id="Player0" type="radio" value="P0" /> 自己 <br />
+			<input name="Player" id="Player1" type="radio" value="P1" /> 玩家1
+			<input name="Player" id="Player2" type="radio" value="P2" /> 玩家2 <br />
+			<input name="Player" id="Player3" type="radio" value="P3" /> 玩家3
+			<input name="Player" id="Player4" type="radio" value="P4" /> 玩家4
+		</fieldset>
+		<input id="SelfCard1" type="checkbox" value="1" /> 1 
+		<input id="SelfCard2" type="checkbox" value="2" /> 2 
+		<input id="SelfCard3" type="checkbox" value="3" /> 3 
+		<input id="SelfCard4" type="checkbox" value="4" /> 4 <br />
+		
+		<fieldset>
+			<legend>顏色</legend>
+			<input checked="checked" id="SelfColor" name="SelfColor" type="radio" value="None" /> None <br />
+			<input name="SelfColor" id="SelfColor" type="radio" value="Red" /> 紅 
+			<input name="SelfColor" id="SelfColor" type="radio" value="Yellow" /> 黃
+			<input name="SelfColor" id="SelfColor" type="radio" value="Green" /> 綠 <br />
+			<input name="SelfColor" id="SelfColor" type="radio" value="Blue" /> 藍
+			<input name="SelfColor" id="SelfColor" type="radio" value="White" /> 白 
+			<input name="SelfColor" id="SelfColor" type="radio" value="Rainbow" /> 彩 <br />
+		</fieldset>
+		
+		<fieldset>
+			<legend>數字</legend>
+			<input checked="checked" name="SelfNumber" id="SelfNumber" type="radio" value="0" /> None <br />
+			<input name="SelfNumber" id="SelfNumber" type="radio" value="1" /> 1 
+			<input name="SelfNumber" id="SelfNumber" type="radio" value="2" /> 2 
+			<input name="SelfNumber" id="SelfNumber" type="radio" value="3" /> 3 
+			<input name="SelfNumber" id="SelfNumber" type="radio" value="4" /> 4 
+			<input name="SelfNumber" id="SelfNumber" type="radio" value="5" /> 5 <br />
+		</fieldset>
+		<br />
+		<button id="Submit" type="submit" value="Submit">Submit</button>
+		<button id="Clear">Clear</button>
+		<button id="Undo">Undo</button>
+	</fieldset>
+</div>
+<div class="rightdiv">
+	<fieldset>
+		<legend>操作紀錄</legend>
+		<textarea id="Record" name="Record" rows="40" cols="50"></textarea>
+	</fieldset>
+</div>
+
+	
+</body>
+
+
+
+</html>
